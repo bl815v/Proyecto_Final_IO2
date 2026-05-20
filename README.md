@@ -28,5 +28,5 @@ GEMINI_API_KEY=tu_api_key
 ## Ejecución
 
 ```bash
-uv run streamlit run app/main.py
+uv run streamlit run main.py
 ```
