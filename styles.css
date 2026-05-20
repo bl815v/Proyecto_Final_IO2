@@ -1,0 +1,33 @@
+.main {
+    background-color: #0f172a;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2,
+h3 {
+    color: #38bdf8;
+}
+
+[data-testid="stMetricValue"] {
+    color: #22c55e;
+    font-size: 2rem;
+}
+
+.stButton>button {
+    background-color: #2563eb;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+}
+
+.stDataFrame {
+    border-radius: 10px;
+}
