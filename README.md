@@ -98,4 +98,7 @@ Planeación de producción en líneas manufactureras considerando:
 
 ## Integrantes
 
+- Jan Henrik Sanchez Jerez
+- Lina Sofía Moreno guatavita
 - Juan Esteban Bedoya Lautero
+- Carlos Andrés Pardo angel
