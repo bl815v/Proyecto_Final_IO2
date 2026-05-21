@@ -2,6 +2,9 @@
 
 Agente inteligente basado en Investigación de Operaciones para resolver problemas de Programación Entera Mixta (MIP) utilizando optimización matemática e Inteligencia Artificial.
 
+# ACCEDE AQUÍ A LA APLICACIÓN!!
+https://io2equipito.streamlit.app/
+
 ## Vista de la aplicación
 
 ### Tema oscuro
@@ -45,6 +48,7 @@ Agente inteligente basado en Investigación de Operaciones para resolver problem
 ## Instalación
 
 ```bash
+pip install uv
 uv sync
 ```
 
