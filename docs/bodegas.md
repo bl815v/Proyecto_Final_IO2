@@ -8,7 +8,7 @@ Una empresa logística debe decidir en cuáles ciudades (Bogotá, Medellín, Cal
 - Medellín: Capacidad 150t, Costo Fijo 40,000, Ganancia/t 350
 - Cali: Capacidad 100t, Costo Fijo 35,000, Ganancia/t 280
 
-# 2. Planteamiento Matemático
+## 2. Planteamiento Matemático
 
 Variables:
 
@@ -20,7 +20,7 @@ $$
 x_{bog}, x_{med}, x_{cal} \geq 0
 $$
 
-## Función Objetivo
+### Función Objetivo
 
 $$
 \max Z =
@@ -32,9 +32,9 @@ $$
 -35000y_{cal}
 $$
 
-## Restricciones
+### Restricciones
 
-### Presupuesto
+#### Presupuesto
 
 $$
 50000y_{bog}
@@ -43,19 +43,19 @@ $$
 \leq 100000
 $$
 
-### Máximo de aperturas
+#### Máximo de aperturas
 
 $$
 y_{bog}+y_{med}+y_{cal}\leq 2
 $$
 
-### Demanda mínima
+#### Demanda mínima
 
 $$
 x_{bog}+x_{med}+x_{cal}\geq 180
 $$
 
-### Capacidad
+#### Capacidad
 
 $$
 x_{bog}\leq 200y_{bog}

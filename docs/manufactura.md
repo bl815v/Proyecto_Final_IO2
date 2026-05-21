@@ -26,7 +26,7 @@ Decidir qué líneas de producción (L1, L2) encender y cuántos productos (A, B
   - C(2.5)
 
 
-# 2. Planteamiento Matemático
+## 2. Planteamiento Matemático
 
 Variables:
 
@@ -38,7 +38,7 @@ $$
 p_{ij}\geq0
 $$
 
-## Función Objetivo
+### Función Objetivo
 
 $$
 \max Z=
@@ -49,9 +49,9 @@ $$
 -6000w_2
 $$
 
-## Restricciones principales
+### Restricciones principales
 
-### Línea 1
+#### Línea 1
 
 $$
 2p_{a1}
@@ -60,7 +60,7 @@ $$
 \leq300w_1
 $$
 
-### Línea 2
+#### Línea 2
 
 $$
 1.5p_{a2}
@@ -69,7 +69,7 @@ $$
 \leq250w_2
 $$
 
-### Límite de ventas por producto
+#### Límite de ventas por producto
 
 $$
 p_{a1}+p_{a2}\leq80

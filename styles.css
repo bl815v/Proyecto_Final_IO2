@@ -1,5 +1,14 @@
 .main {
-    background-color: #0f172a;
+    background-color: #111827;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: -40px;
+    margin-bottom: 40px;
+    color: white;
 }
 
 h1 {
@@ -13,21 +22,60 @@ h3 {
     color: #38bdf8;
 }
 
+p,
+li {
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+[data-testid="stMarkdownContainer"] {
+    font-size: 1.08rem;
+}
+
 [data-testid="stMetricValue"] {
     color: #22c55e;
     font-size: 2rem;
 }
 
-.stButton>button {
-    background-color: #2563eb;
-    color: white;
-    border-radius: 10px;
-    height: 50px;
-    width: 100%;
-    font-size: 18px;
-    border: none;
-}
-
 .stDataFrame {
     border-radius: 10px;
+}
+
+div[role="radiogroup"] {
+    gap: 10px 0px;
+}
+
+div[data-testid="stButton"] {
+    display: flex !important;
+    justify-content: center !important;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    width: 100%;
+}
+
+.stButton > button {
+    background-color: #991b1b !important;
+    color: white !important;
+
+    border-radius: 2px !important;
+    border: none !important;
+
+    height: 55px !important;
+    width: 320px !important;
+
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #b91c1c !important;
+    transform: scale(1.02);
+}
+
+* {
+    border-radius: 0px !important;
 }

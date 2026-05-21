@@ -9,7 +9,7 @@ Seleccionar proyectos (Alpha, Beta, Gamma, Delta) y determinar la inversión en 
 - Gamma: Fijo 8k, Inv (15k a 60k), ROI 12%
 - Delta: Fijo 20k, Inv (50k a 120k), ROI 20%. Excluyente con Alpha.
 
-# 2. Planteamiento Matemático
+## 2. Planteamiento Matemático
 
 Variables:
 
@@ -21,7 +21,7 @@ $$
 inv_a,inv_b,inv_g,inv_d \geq 0
 $$
 
-## Función Objetivo
+### Función Objetivo
 
 $$
 \max Z=
@@ -35,15 +35,15 @@ $$
 -20000z_d
 $$
 
-## Restricciones principales
+### Restricciones principales
 
-### Presupuesto global
+#### Presupuesto global
 
 $$
 \sum CostosFijos+\sum Inversiones \leq 200000
 $$
 
-### Exclusión Delta-Alpha
+#### Exclusión Delta-Alpha
 
 $$
 z_a+z_d\leq1
