@@ -14,7 +14,7 @@ def generar_analisis_ia(tipo_modelo, resultados):
 	try:
 		genai.configure(api_key=API_KEY)
 
-		modelo = genai.GenerativeModel('gemini-2.5-flash')
+		modelo = genai.GenerativeModel('gemini-3.5-flash')
 
 		resultados_json = json.dumps(resultados, indent=2, ensure_ascii=False, default=str)
 
