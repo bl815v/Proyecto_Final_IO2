@@ -4,12 +4,9 @@ import json
 import os
 
 import google.generativeai as genai
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
-
-API_KEY = os.getenv('GEMINI_API_KEY')
-
+API_KEY = st.secrets['GEMINI_API_KEY']
 
 def generar_analisis_ia(tipo_modelo, resultados):
 	"""Generar interpretación inteligente del modelo."""
