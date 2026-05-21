@@ -17,8 +17,20 @@ st.title('Sistema Inteligente de Optimización de Programación Entera Mixta (MI
 st.sidebar.title('Módulos')
 
 modulo = st.sidebar.radio(
-	'Seleccionar problema', ['Optimización de bodegas', 'Selección de proyectos', 'Manufactura']
+	'Seleccionar problema',
+	[
+		'Expansión de bodegas logísticas',
+		'Selección de proyectos de inversión',
+		'Producción manufacturera',
+	],
 )
+
+
+def cargar_markdown(ruta):
+	"""Cargar contenido markdown."""
+
+	with open(ruta, encoding='utf-8') as archivo:
+		return archivo.read()
 
 
 if 'resultados' not in st.session_state:
@@ -29,12 +41,12 @@ if 'analisis' not in st.session_state:
 
 
 def ejecutar_modelo(nombre_modulo, funcion_modelo, tipo_ia):
-	"""Ejecutar modelo y guardar resultados."""
+	"""Ejecutar modelo."""
 
 	with st.spinner('Resolviendo modelo matemático...'):
 		resultados = funcion_modelo()
 
-	with st.spinner('Generando interpretación inteligente...'):
+	with st.spinner('Generando análisis inteligente...'):
 		analisis = generar_analisis_ia(tipo_ia, resultados)
 
 	st.session_state.resultados[nombre_modulo] = resultados
@@ -47,65 +59,50 @@ def mostrar_resultados(nombre_modulo):
 	resultados = st.session_state.resultados[nombre_modulo]
 	analisis = st.session_state.analisis[nombre_modulo]
 
-	if nombre_modulo == 'bodegas':
-		col1, col2 = st.columns(2)
+	metricas = resultados['metricas']
 
-		with col1:
-			st.metric('Ganancia máxima', f'${resultados["ganancia"]:,.0f}')
+	col1, col2 = st.columns(2)
 
-		with col2:
-			st.metric('Bodegas abiertas', resultados['bodegas_abiertas'])
+	with col1:
+		st.metric(metricas[0]['titulo'], metricas[0]['valor'])
 
-	elif nombre_modulo == 'proyectos':
-		col1, col2 = st.columns(2)
+	with col2:
+		st.metric(metricas[1]['titulo'], metricas[1]['valor'])
 
-		with col1:
-			st.metric('Beneficio total', f'${resultados["beneficio"]:,.0f}')
-
-		with col2:
-			st.metric('Proyectos seleccionados', resultados['cantidad'])
-
-	elif nombre_modulo == 'manufactura':
-		col1, col2 = st.columns(2)
-
-		with col1:
-			st.metric('Ganancia total', f'${resultados["ganancia"]:,.0f}')
-
-		with col2:
-			st.metric('Producción total', resultados['produccion_total'])
-
-	st.subheader('Resultados')
+	st.subheader('Resultados del Modelo')
 	st.dataframe(resultados['tabla'], width='stretch')
 
 	st.subheader('Interpretación Inteligente')
 	st.info(analisis)
 
 
-if modulo == 'Optimización de bodegas':
-	st.header('Optimización de Bodegas')
+if modulo == 'Expansión de bodegas logísticas':
+	st.markdown(cargar_markdown('docs/bodegas.md'))
 
 	if st.button('Resolver modelo', key='bodegas_btn'):
-		ejecutar_modelo('bodegas', resolver_modelo_bodegas, 'bodegas')
+		ejecutar_modelo('bodegas', resolver_modelo_bodegas, 'expansión de bodegas logísticas')
 
 	if 'bodegas' in st.session_state.resultados:
 		mostrar_resultados('bodegas')
 
 
-elif modulo == 'Selección de proyectos':
-	st.header('Selección de Proyectos')
+elif modulo == 'Selección de proyectos de inversión':
+	st.markdown(cargar_markdown('docs/proyectos.md'))
 
 	if st.button('Resolver modelo', key='proyectos_btn'):
-		ejecutar_modelo('proyectos', resolver_modelo_proyectos, 'proyectos')
+		ejecutar_modelo(
+			'proyectos', resolver_modelo_proyectos, 'selección de proyectos de inversión'
+		)
 
 	if 'proyectos' in st.session_state.resultados:
 		mostrar_resultados('proyectos')
 
 
-elif modulo == 'Manufactura':
-	st.header('Producción Manufacturera')
+elif modulo == 'Producción manufacturera':
+	st.markdown(cargar_markdown('docs/manufactura.md'))
 
 	if st.button('Resolver modelo', key='manufactura_btn'):
-		ejecutar_modelo('manufactura', resolver_modelo_manufactura, 'manufactura')
+		ejecutar_modelo('manufactura', resolver_modelo_manufactura, 'producción manufacturera')
 
 	if 'manufactura' in st.session_state.resultados:
 		mostrar_resultados('manufactura')
