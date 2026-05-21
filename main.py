@@ -61,8 +61,7 @@ if 'procesando_ia' not in st.session_state:
 
 
 def formatear_numero(valor):
-	"""Formatear números al estilo colombiano."""
-
+	"""Formatear número con separadores de miles y decimales."""
 	if isinstance(valor, (int, float)):
 		texto = f'{valor:,.2f}'
 	else:
@@ -78,6 +77,7 @@ def mostrar_tabla(tabla):
 		df_formateado = tabla.style.format(
 			thousands='.',
 			decimal=',',
+			precision=3,
 		)
 
 		st.dataframe(
